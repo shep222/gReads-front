@@ -1,3 +1,20 @@
 header {
   display: flex;
 }
+
+.logo {
+  padding-right: 20px;
+}
+
+.mainBody {
+  margin-top: 10px;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+.imgSub {
+  justify-content: center;
+}
