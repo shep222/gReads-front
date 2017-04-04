@@ -1,6 +1,6 @@
 $(document).ready(function() {
 const url = "https://my-g-read.herokuapp.com"
-  $.get(`${url}/author/1`).then(myAuthor)
+  $.get(`${url}/author/`+location.search.slice(4)).then(myAuthor)
 
   function myAuthor (author) {
 console.log(author);
@@ -25,7 +25,6 @@ console.log(author);
   </div>
     `))
   }
-
 
 
 
