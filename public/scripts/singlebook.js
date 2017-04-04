@@ -1,6 +1,7 @@
 $(document).ready(function() {
 const url = "https://my-g-read.herokuapp.com"
-  $.get(`${url}/book/1`).then(myBook)
+
+  $.get(`${url}/book/`+location.search.slice(4)).then(myBook)
 
   function myBook (book) {
 
