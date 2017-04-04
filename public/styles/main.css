@@ -48,3 +48,11 @@ header {
 .deleteComplete, .deleteAuthorComplete {
   margin-left: 40%;
 }
+
+.myAuthors > *::after {
+  content: ", ";
+}
+
+.myAuthors >:last-child::after {
+  content: "";
+}
