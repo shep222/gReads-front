@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Galvanized Reads</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="http://placehold.it/100x100">
+        <h1>Galvanized Reads</h1>
+    </header>
+    <h1>Books</h1>
+    <section class="allBooks">
+      <div class="container">
+          <article class="row">
+              <div class="col-md-3">
+                  <img class="booksImg" src="">
+              </div>
+              <div class="col-md-8">
+                  <div class="bookTitle">
+                      <h1 class="mainTitle">${book.title}</h1>
+
+                  </div>
+                  <div class="">
+                      <h3>Author Info</h3>
+                      <h3>${book.genre}</h3>
+                      <p>${book.description}</p>
+                  </div>
+              </div>
+          </article>
+          <button class="deleteComplete btn btn-primary" type="button" name="button">Delete [book name]</button>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <script src="./scripts/books.js"></script> -->
+</body>
+
+</html>
