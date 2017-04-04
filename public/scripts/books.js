@@ -27,17 +27,17 @@ const url = "https://my-g-read.herokuapp.com"
           </div>
         `))
     })
-  }                                                          
+  }
   $('body').on('click', '.editBtn', function() {
          var editBook = $(this).closest('.container').data('id')
          console.log(editBook);
-        //  window.location = "/editBook.html?id="+editBook
+         window.location = "/editBook.html?id="+editBook
       })
 
       $('body').on('click', '.showMe', function() {
             var thisONe = $(this).closest('.container').data('id')
             console.log(thisONe);
-            window.location = "/singlebook.html?id="+thisONe
+            window.location = "/singleBook.html?id="+thisONe
           })
 
 
