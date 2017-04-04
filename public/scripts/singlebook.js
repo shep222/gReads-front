@@ -1,10 +1,10 @@
 $(document).ready(function() {
-const url = "https://my-g-read.herokuapp.com"
-  $.get(`${url}/book/`+location.search.slice(4)).then(myBook)
+    const url = "https://my-g-read.herokuapp.com"
+    $.get(`${url}/book/` + location.search.slice(4)).then(myBook)
 
-  function myBook (book) {
+    function myBook(book) {
 
-  $('.myBook').append($(`<div class="container">
+        $('.myBook').append($(`<div class="container" data-id=${book[0].id}>
       <article class="row">
           <div class="col-md-3">
               <img class="booksImg" src="${book[0].coverUrl}">
@@ -13,8 +13,8 @@ const url = "https://my-g-read.herokuapp.com"
               <div class="bookTitle">
                   <h1 class="mainTitle">${book[0].title}</h1>
                   <div class="myButtons">
-                      <button class="myBtn btn btn-primary" type="button" name="button">Edit</button>
-                      <button class="myBtn btn btn-primary" type="button" name="button">Remove</button>
+                      <button class="editBtn myBtn btn btn-primary" type="button" name="button">Edit</button>
+                      <button class="deleteBookBtn myBtn btn btn-primary" type="button" name="button">Remove</button>
                   </div>
               </div>
               <div class="">
@@ -26,9 +26,18 @@ const url = "https://my-g-read.herokuapp.com"
       </article>
   </div>
     `))
-  }
+    }
 
 
+    $('body').on('click', '.editBtn', function() {
+        var editBook = $(this).closest('.container').data('id')
+        window.location = "/editBook.html?id=" + editBook
+    })
+
+    $('body').on('click', '.deleteBookBtn', function() {
+        var deleteThisONe = $(this).closest('.container').data('id')
+        window.location = "/deleteBook.html?id=" + deleteThisONe
+    })
 
 
 

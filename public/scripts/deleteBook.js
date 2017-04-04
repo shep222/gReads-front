@@ -43,12 +43,4 @@ console.log(book);
               console.log(err);
           })
       });
-
-
-
-
-
-
-
-
 })

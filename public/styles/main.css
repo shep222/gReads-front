@@ -45,6 +45,6 @@ header {
     margin-left: 40%;
 }
 
-.deleteComplete {
+.deleteComplete, .deleteAuthorComplete {
   margin-left: 40%;
 }
