@@ -3,7 +3,9 @@ $(document).ready(function() {
     $.get(`${url}/book`).then(myBooks)
 
     function myBooks(books) {
+      console.log(books);
         books.forEach(function(book) {
+          
             $('.allBooks').append($(`<div class="container" data-id=${book.id}>
           <article class="row">
           <div class="col-md-3">

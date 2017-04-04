@@ -16,7 +16,6 @@ const url = "https://my-g-read.herokuapp.com"
               </div>
               <div class="">
                   <p>${author[0].bio}</p>
-
               </div>
           </div>
       </article>
