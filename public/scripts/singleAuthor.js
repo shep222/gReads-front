@@ -1,10 +1,9 @@
 $(document).ready(function() {
-const url = "https://my-g-read.herokuapp.com"
-  $.get(`${url}/author/`+location.search.slice(4)).then(myAuthor)
+    const url = "https://my-g-read.herokuapp.com"
+    $.get(`${url}/author/` + location.search.slice(4)).then(myAuthor)
 
-  function myAuthor (author) {
-console.log(author);
-  $('.singleAuthor').append($(`<div class="container">
+    function myAuthor(author) {
+        $('.singleAuthor').append($(`<div class="container">
       <article class="row">
           <div class="col-md-3">
               <img class="authorImg" src="${author[0].photoUrl}">
@@ -24,14 +23,5 @@ console.log(author);
       </article>
   </div>
     `))
-  }
-
-
-
-
-
-
-
-
-
+    }
 })

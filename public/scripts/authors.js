@@ -38,7 +38,7 @@ const url = "https://my-g-read.herokuapp.com"
       $('body').on('click', '.showMeAuthor', function() {
             var thisAuthor = $(this).closest('.container').data('id')
             console.log(thisAuthor);
-            window.location = "/singleAuthor.html?id="+thisAuthor
+            window.location = "/singleAuthors.html?id="+thisAuthor
           })
 
 
