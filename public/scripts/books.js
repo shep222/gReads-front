@@ -39,27 +39,27 @@ $(document).ready(function() {
 
     var myNewBook = {}
     $('.addBook').on('click', function(event) {
-            event.preventDefault()
-            myNewBook.title = $('.newTitle').val()
-            myNewBook.genre = $('.newGenre').val()
-            myNewBook.coverUrl = $('.newURL').val()
-            myNewBook.description = $('.newDescription').val()
+        event.preventDefault()
+        myNewBook.title = $('.newTitle').val()
+        myNewBook.genre = $('.newGenre').val()
+        myNewBook.coverUrl = $('.newURL').val()
+        myNewBook.description = $('.newDescription').val()
 
-            $.ajax({
-                    url: `${url}/book`,
-                    method: 'POST',
-                    crossDomain: true,
-                    data: JSON.stringify(myNewBook),
-                    contentType: "application/json; charset=utf-8"
-                })
-                .then(response => {
+        $.ajax({
+                url: `${url}/book`,
+                method: 'POST',
+                crossDomain: true,
+                data: JSON.stringify(myNewBook),
+                contentType: "application/json; charset=utf-8"
+            })
+            .then(response => {
 
-                    var whoWroteIt = {}
-                    var answer = $('.authorList').val()
-                    console.log(answer);
-                    answer.forEach(function(author){
-                      whoWroteIt.author_id = author
-                      whoWroteIt.book_id = response[0]
+                var whoWroteIt = {}
+                var answer = $('.authorList').val()
+                console.log(answer);
+                answer.forEach(function(author) {
+                    whoWroteIt.author_id = author
+                    whoWroteIt.book_id = response[0]
                     $.ajax({
                             url: `${url}/author_book`,
                             method: 'POST',
@@ -76,34 +76,30 @@ $(document).ready(function() {
                         .catch(err => {
                             console.log(err);
                         })
-
-                      })
-            console.log(response[0]);
-
-            
-        })
-        .catch(err => {
-            console.log(err);
-        })
-})
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    })
 
 
 
-$('body').on('click', '.editBtn', function() {
-    var editBook = $(this).closest('.container').data('id')
-    window.location = "/editBook.html?id=" + editBook
-})
+    $('body').on('click', '.editBtn', function() {
+        var editBook = $(this).closest('.container').data('id')
+        window.location = "/editBook.html?id=" + editBook
+    })
 
-$('body').on('click', '.showMe', function() {
-    var thisONe = $(this).closest('.container').data('id')
-    window.location = "/singleBook.html?id=" + thisONe
-})
+    $('body').on('click', '.showMe', function() {
+        var thisONe = $(this).closest('.container').data('id')
+        window.location = "/singleBook.html?id=" + thisONe
+    })
 
 
-$('body').on('click', '.deleteBookBtn', function() {
-var deleteThisONe = $(this).closest('.container').data('id')
-window.location = "/deleteBook.html?id=" + deleteThisONe
-})
+    $('body').on('click', '.deleteBookBtn', function() {
+        var deleteThisONe = $(this).closest('.container').data('id')
+        window.location = "/deleteBook.html?id=" + deleteThisONe
+    })
 
 
 

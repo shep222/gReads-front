@@ -27,6 +27,7 @@ console.log(book);
   }
 
   $('body').on('click', '.deleteComplete', function() {
+          event.preventDefault()
           var deletedBook = $(this).closest('.container').data('id')
           console.log(deletedBook);
           $.ajax({
